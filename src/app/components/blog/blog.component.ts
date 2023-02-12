@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { empty } from 'rxjs';
-import { EMPTY_SUBSCRIPTION } from 'rxjs/internal/Subscription';
 import { Noticia } from 'src/app/interfaces/noticia.interface';
 
 
@@ -20,6 +18,8 @@ export class BlogComponent {
   noticiaCargada: string = "";
   noticiasPrecargadas: any[] = [];
 
+  
+
   constructor(){
     this.noticiasPrecargadas = [
       { title: 'El Govern estudia una ampliación de El Prat con una pista nueva sobre el mar', 
@@ -35,7 +35,6 @@ export class BlogComponent {
     ];
     };
 
- 
 
   guardar(): void {
     let noticia: Noticia = {
@@ -45,13 +44,12 @@ export class BlogComponent {
       fechaPublicacion: this.fechaPublicacion
     }
 
-
-    this.arrNoticias.push(noticia);
-
     this.title = "";
     this.url = "";
     this.fechaPublicacion = "";
     this.textoNoticia ="";
+
+    this.arrNoticias.push(noticia);
   
   }
 

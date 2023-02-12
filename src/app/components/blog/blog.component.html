@@ -14,10 +14,9 @@
       href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap"
       rel="stylesheet"
     />
- 
     <title>Blog de Noticias</title>
-
 </head>
+
 <body>
 <main class="wrapper">
     <header>
@@ -25,6 +24,7 @@
               <h1>Blog de Noticias</h1>
             </div>
     </header>
+    <!--Formulario-->
     <section>
         <div>
         <div class="rc-section-container">
@@ -46,37 +46,35 @@
             <label for="textoNoticia" class="rc-section-gap">Texto de la noticia</label>
             <input type="text" id="textoNoticia" [(ngModel)]="textoNoticia">
         </div>
-      
         <button (click)="guardar()" class="rc-button">Enviar noticia</button>
       </div>
     </section>
       
+    <!--Noticias añadidas-->
     <section class="rc-section-featured rc-layout-flex">
         <h2 class="rc-section-gap">Últimas noticias añadidas</h2>
 
         <div class="rc-section-featured__gallery rc-layout-grid">
-            <article>
-                <h2>{{noticiasPrecargadas[0].title}}</h2>
-                <p>{{noticiasPrecargadas[0].fechaPublicacion}}</p>
-                <img [src]="noticiasPrecargadas[0].url" [alt]="noticiasPrecargadas[0].title" class="rc-section-featured--preview">
-                <p>{{noticiasPrecargadas[0].textoNoticia}}</p>
+            <article class="rc-section-featured__article rc-layout-flex-item">
+                <h2 class="subItem">{{noticiasPrecargadas[0].title}}</h2>
+                <img [src]="noticiasPrecargadas[0].url" [alt]="noticiasPrecargadas[0].title" class="rc-section-featured--preview subItem">
+                <p class="subItem">{{noticiasPrecargadas[0].fechaPublicacion}}</p>
+                <p class="subItem">{{noticiasPrecargadas[0].textoNoticia}}</p>
             </article>
-            <article>
-                <h2>{{noticiasPrecargadas[1].title}}</h2>
-                <p>{{noticiasPrecargadas[1].fechaPublicacion}}</p>
-                <img [src]="noticiasPrecargadas[1].url" [alt]="noticiasPrecargadas[1].title" class="rc-section-featured--preview">
-                <p>{{noticiasPrecargadas[1].textoNoticia}}</p>
+            <article class="rc-section-featured__article rc-layout-flex-item">
+                <h2 class="subItem">{{noticiasPrecargadas[1].title}}</h2>
+                <img [src]="noticiasPrecargadas[1].url" [alt]="noticiasPrecargadas[1].title" class="rc-section-featured--preview subItem">
+                <p class="subItem">{{noticiasPrecargadas[1].fechaPublicacion}}</p>
+                <p class="subItem">{{noticiasPrecargadas[1].textoNoticia}}</p>
             </article>
-            <article *ngFor="let noticia of arrNoticias" class="rc-section-featured__article rc-layout-flex">
-                <h2>{{noticia.title}}</h2>
-                <p>{{noticia.fechaPublicacion}}</p>
-                <img [src]="noticia.url" [alt]="noticia.title" class="rc-section-featured--preview">
-                <p>{{noticia.textoNoticia}}</p>
+            <article *ngFor="let noticia of arrNoticias" class="rc-section-featured__article rc-layout-flex-item">
+                <h2 class="subItem">{{noticia.title}}</h2>
+                <img [src]="noticia.url" [alt]="noticia.title" class="rc-section-featured--preview subItem">
+                <p class="subItem">{{noticia.fechaPublicacion}}</p>
+                <p class="subItem">{{noticia.textoNoticia}}</p>
             </article>
         </div>
       </section>
-      
-    
 </main>
 </body>
 </html>
