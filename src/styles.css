@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  /* COLOR PALETTE */
+  --rc-color-n-050: #f6f6f6;
+  --rc-color-n-300: #c4c4c4;
+  --rc-color-n-500: #0f0f0f;
+
+  /* BACKGROUND COLOR */
+  --rc-color-background: var(--rc-color-n-500);
+
+  /* TYPOGRAPHY COLOR */
+  --rc-color-typography-heading: var(--rc-color-n-050);
+  --rc-color-typography-body: var(--rc-color-n-050);
+  --rc-color-typography-price: var(--rc-color-n-300);
+
+  /* TYPOGRAPHY */
+  --rc-typography-typeface: "Lato", sans-serif;
+
+  /* FONT SIZE */
+  --rc-typography-h1: 1.9rem;
+  --rc-typography-h2: 1.5rem;
+  --rc-typography-h3: 1.2rem;
+  --rc-typography-p: 0.8rem;
+
+  /* LETTER SPACING */
+  --rc-typography-heading-spacing: 0.5rem;
+  --rc-typography-content-spacing: 0.2rem;
+
+  /* GAP */
+  --rc-gap: 1.5rem;
+
+  /* PADDING */
+  --rc-section-padding: 1.5rem 0;
+  --rc-btn-padding: 0.5rem 2rem;
+
+  /* BORDER */
+  --rc-border: 0.12rem solid var(--rc-color-n-050);
+
+  /* SIZING */
+  --rc-image-height: 18rem;
+}
