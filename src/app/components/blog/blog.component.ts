@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 import { Noticia } from 'src/app/interfaces/noticia.interface';
 
 
@@ -18,9 +18,13 @@ export class BlogComponent {
   noticiaCargada: string = "";
   noticiasPrecargadas: any[] = [];
 
+
+  noticiaEnviada: EventEmitter<string>
+
   
 
   constructor(){
+    this.noticiaEnviada = new EventEmitter ();
     this.noticiasPrecargadas = [
       { title: 'El Govern estudia una ampliación de El Prat con una pista nueva sobre el mar', 
       url: 'https://www.lavanguardia.com/files/image_948_465/files/fp/uploads/2023/02/10/63e6856908d5b.r_d.606-413-7822.jpeg', 
@@ -36,69 +40,30 @@ export class BlogComponent {
     };
 
 
-  guardar(): void {
-    let noticia: Noticia = {
+  guardar(): void { 
+      let noticia: Noticia = {
       title: this.title,
       url: this.url,
       textoNoticia: this.textoNoticia,
       fechaPublicacion: this.fechaPublicacion
-    }
+      }
+     
+     
+      if (noticia !== null){
+        this.arrNoticias.push(noticia);
+      }else{
+        alert('Debes completar todos los campos!')
+      } ;
+    
+       /* No funciona el alert porque dentro de la función de enviar tengo una variable. Pensaba que si comprobaba si esta constante no está vacia 
+      Se pinta y sinó salta el alert, pero no funciona */
 
     this.title = "";
     this.url = "";
     this.fechaPublicacion = "";
     this.textoNoticia ="";
 
-    this.arrNoticias.push(noticia);
+    
+    
   
-  }
-
-  
-
-
-
-
-  /*todasNoticias: Noticia [] = [];
-
- constructor(){
-  this.arrNoticias = new Array (
-  )
- }
- 
-  titulo: string = "";
-  url: string = "";
-  textoNoticia: string = "";
-  fechaPublicacion: string = "";
-  noticia: string = "";
-
-  arrNoticias: Noticia[] = [];
-
-  guardarNoticia(): void {
-    let noticia: Noticia ={
-      titulo: this.titulo,
-      url: this.url,
-      textoNoticia: this.textoNoticia,
-      fechaPublicacion: this.fechaPublicacion,
-    }
-
-    this.arrNoticias.push(noticia);
-    this.cargarNoticias();
-
-    this.titulo = "";
-    this.url= "";
-    this.textoNoticia= "";
-    this.fechaPublicacion= "";
-  }
-
-    cargarNoticias() : void {
-      this.arrNoticias.forEach(noticia => {
-        this.noticia += `<article> ${noticia.titulo}</article>`
-      });
-
-    }*/
-
-
-  } 
-
-
- 
+  }}
