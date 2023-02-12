@@ -21,23 +21,8 @@
 
 
 
-<section>
-    <h1>
-      Latest News
-    </h1>
-    <div class="featured-news">
 
-
-        <!--
-        <article *ngFor="let noticia of todasNoticias">
-            <h3>{{ arrNoticias[0].titulo }}</h3>
-            <p>{{ arrNoticias[0].fechaPublicacion }}</p>
-            <img [src]="" [alt]="">
-            <p>{{ arrNoticias[0].textoNoticia }}</p>
-        </article>
-      </div>
-  </section> -->
-
+-->
   <div>
     <div>
       <label for="title">Título de la noticia</label>
@@ -45,7 +30,7 @@
     </div>
   
     <div>
-      <label for="url">Url de la noticia</label>
+      <label for="text">Url de la noticia</label>
       <input type="text" id="url" [(ngModel)]="url">
     </div>
 
@@ -59,13 +44,20 @@
         <input type="text" id="textoNoticia" [(ngModel)]="textoNoticia">
     </div>
   
-    <!-- <p>{{nombre }} {{apellido}}</p> -->
     <button (click)="guardar()">Enviar noticia</button>
   </div>
+
+
   <section>
-    <h2>Lista de contactos</h2>
-    <ul [innerHTML]="contactos" class="contactos">
-      <!-- <li>Juan Antonio Pérez</li>-->
-    </ul>
-  
-  </section>
+    <h1>
+      Latest News
+    </h1>
+    <div class="featured-news">
+        <article *ngFor="let noticia of arrNoticias">
+            <h3>{{noticia.title}}</h3>
+            <p>{{noticia.fechaPublicacion}}</p>
+            <img [src]="noticia.url" [alt]="noticia.title">
+            <p>{{noticia.textoNoticia}}</p>
+        </article>
+      </div>
+  </section> 

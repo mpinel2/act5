@@ -15,8 +15,10 @@ export class BlogComponent {
   fechaPublicacion: string ="";
   textoNoticia: string ="";
   arrNoticias: Noticia[] = [];
-  contactos: string = "";
-  contador: number = 1;
+  noticiaCargada: string = "";
+  noticiaPrecargada: any = this.guardar
+
+ 
 
   guardar(): void {
     let noticia: Noticia = {
@@ -26,21 +28,22 @@ export class BlogComponent {
       fechaPublicacion: this.fechaPublicacion
     }
 
+    console.log(this.noticiaPrecargada);
+
+
+  
+
     this.arrNoticias.push(noticia);
-    console.log(this.arrNoticias)
-    this.cargarDatos();
-    this.contador++;
+ 
+ 
 
     this.title = "";
-    this.url = ""
+    this.url = "";
+    this.fechaPublicacion = "";
+    this.textoNoticia ="";
   }
 
-  cargarDatos(): void {
-    this.contactos = "";
-    this.arrNoticias.forEach(noticia => {
-      this.contactos += `<li> ${noticia.title} ${noticia.fechaPublicacion}</li>`
-    });
-  }
+  
 
 
 
@@ -48,7 +51,7 @@ export class BlogComponent {
   /*todasNoticias: Noticia [] = [];
 
  constructor(){
-  this.todasNoticias = new Array (
+  this.arrNoticias = new Array (
   )
  }
  
