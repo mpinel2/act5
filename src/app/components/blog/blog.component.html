@@ -1,1 +1,71 @@
-<p>blog works!</p>
+<!--<section>
+    <div>
+    <label for="titulo">Título de la noticia</label>
+    <input type="text" id="titulo" [(ngModel)]="titulo">
+    </div>
+    <div>
+        <label for="url">Inserta aquí la url de la imagen</label>
+        <input type="url" id="url" [(ngModel)]="url">
+    </div>
+    <div>
+        <label for="fechaPublicacion">Fecha de la publicación</label>
+        <input type="text" id="fechaPublicacion" [(ngModel)]="fechaPublicacion">
+    </div>
+    <div>
+        <label for="textoNoticia">Noticia</label>
+        <input type="text" id="textoNoticia" [(ngModel)]="textoNoticia">
+    </div>
+    <button (click) ="guardarNoticia">Publica la notícia</button>
+
+</section>
+
+
+
+<section>
+    <h1>
+      Latest News
+    </h1>
+    <div class="featured-news">
+
+
+        <!--
+        <article *ngFor="let noticia of todasNoticias">
+            <h3>{{ arrNoticias[0].titulo }}</h3>
+            <p>{{ arrNoticias[0].fechaPublicacion }}</p>
+            <img [src]="" [alt]="">
+            <p>{{ arrNoticias[0].textoNoticia }}</p>
+        </article>
+      </div>
+  </section> -->
+
+  <div>
+    <div>
+      <label for="title">Título de la noticia</label>
+      <input type="text" id="title" [(ngModel)]="title">
+    </div>
+  
+    <div>
+      <label for="url">Url de la noticia</label>
+      <input type="text" id="url" [(ngModel)]="url">
+    </div>
+
+    <div>
+        <label for="fechaPublicacion">Fecha de la publicación</label>
+        <input type="text" id="fechaPublicacion" [(ngModel)]="fechaPublicacion">
+    </div>
+
+    <div>
+        <label for="textoNoticia">Texto de la noticia</label>
+        <input type="text" id="textoNoticia" [(ngModel)]="textoNoticia">
+    </div>
+  
+    <!-- <p>{{nombre }} {{apellido}}</p> -->
+    <button (click)="guardar()">Enviar noticia</button>
+  </div>
+  <section>
+    <h2>Lista de contactos</h2>
+    <ul [innerHTML]="contactos" class="contactos">
+      <!-- <li>Juan Antonio Pérez</li>-->
+    </ul>
+  
+  </section>

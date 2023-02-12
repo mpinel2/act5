@@ -1,5 +1,5 @@
 export interface Noticia {
-    titulo: string;
+    title: string;
     url: string;
     textoNoticia: string;
     fechaPublicacion: string;
