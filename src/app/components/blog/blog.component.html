@@ -52,8 +52,21 @@
     </section>
       
     <section class="rc-section-featured rc-layout-flex">
-        <h2>Últimas noticias añadidas</h2>
+        <h2 class="rc-section-gap">Últimas noticias añadidas</h2>
+
         <div class="rc-section-featured__gallery rc-layout-grid">
+            <article>
+                <h2>{{noticiasPrecargadas[0].title}}</h2>
+                <p>{{noticiasPrecargadas[0].fechaPublicacion}}</p>
+                <img [src]="noticiasPrecargadas[0].url" [alt]="noticiasPrecargadas[0].title" class="rc-section-featured--preview">
+                <p>{{noticiasPrecargadas[0].textoNoticia}}</p>
+            </article>
+            <article>
+                <h2>{{noticiasPrecargadas[1].title}}</h2>
+                <p>{{noticiasPrecargadas[1].fechaPublicacion}}</p>
+                <img [src]="noticiasPrecargadas[1].url" [alt]="noticiasPrecargadas[1].title" class="rc-section-featured--preview">
+                <p>{{noticiasPrecargadas[1].textoNoticia}}</p>
+            </article>
             <article *ngFor="let noticia of arrNoticias" class="rc-section-featured__article rc-layout-flex">
                 <h2>{{noticia.title}}</h2>
                 <p>{{noticia.fechaPublicacion}}</p>
