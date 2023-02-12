@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { empty } from 'rxjs';
+import { EMPTY_SUBSCRIPTION } from 'rxjs/internal/Subscription';
 import { Noticia } from 'src/app/interfaces/noticia.interface';
 
 
@@ -16,8 +18,10 @@ export class BlogComponent {
   textoNoticia: string ="";
   arrNoticias: Noticia[] = [];
   noticiaCargada: string = "";
-  noticiaPrecargada: any = this.guardar
 
+  constructor(){
+
+  }
  
 
   guardar(): void {
@@ -28,14 +32,8 @@ export class BlogComponent {
       fechaPublicacion: this.fechaPublicacion
     }
 
-    console.log(this.noticiaPrecargada);
-
-
-  
 
     this.arrNoticias.push(noticia);
- 
- 
 
     this.title = "";
     this.url = "";

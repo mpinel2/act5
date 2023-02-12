@@ -1,63 +1,71 @@
-<!--<section>
-    <div>
-    <label for="titulo">Título de la noticia</label>
-    <input type="text" id="titulo" [(ngModel)]="titulo">
-    </div>
-    <div>
-        <label for="url">Inserta aquí la url de la imagen</label>
-        <input type="url" id="url" [(ngModel)]="url">
-    </div>
-    <div>
-        <label for="fechaPublicacion">Fecha de la publicación</label>
-        <input type="text" id="fechaPublicacion" [(ngModel)]="fechaPublicacion">
-    </div>
-    <div>
-        <label for="textoNoticia">Noticia</label>
-        <input type="text" id="textoNoticia" [(ngModel)]="textoNoticia">
-    </div>
-    <button (click) ="guardarNoticia">Publica la notícia</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-</section>
+    <link rel="preconnect" href="https://res.cloudinary.com" />
+    <link ref="dns-prefetch" href="https://res.cloudinary.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link ref="dns-prefetch" href="https://fonts.googleapis.com" />
 
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+ 
+    <title>Blog de Noticias</title>
 
-
-
--->
-  <div>
-    <div>
-      <label for="title">Título de la noticia</label>
-      <input type="text" id="title" [(ngModel)]="title">
-    </div>
-  
-    <div>
-      <label for="text">Url de la noticia</label>
-      <input type="text" id="url" [(ngModel)]="url">
-    </div>
-
-    <div>
-        <label for="fechaPublicacion">Fecha de la publicación</label>
-        <input type="text" id="fechaPublicacion" [(ngModel)]="fechaPublicacion">
-    </div>
-
-    <div>
-        <label for="textoNoticia">Texto de la noticia</label>
-        <input type="text" id="textoNoticia" [(ngModel)]="textoNoticia">
-    </div>
-  
-    <button (click)="guardar()">Enviar noticia</button>
-  </div>
-
-
-  <section>
-    <h1>
-      Latest News
-    </h1>
-    <div class="featured-news">
-        <article *ngFor="let noticia of arrNoticias">
-            <h3>{{noticia.title}}</h3>
-            <p>{{noticia.fechaPublicacion}}</p>
-            <img [src]="noticia.url" [alt]="noticia.title">
-            <p>{{noticia.textoNoticia}}</p>
-        </article>
+</head>
+<body>
+<main class="wrapper">
+    <header>
+        <div class="rc-section-header-layout rc-layout-flex">
+              <h1>Blog de Noticias</h1>
+            </div>
+    </header>
+    <section>
+        <div>
+        <div class="rc-section-container">
+          <label for="title" class="rc-section-gap">Título de la noticia</label>
+          <input type="text" id="title" [(ngModel)]="title">
+        </div>
+      
+        <div class="rc-section-container">
+          <label for="text" class="rc-section-gap">Url de la noticia</label>
+          <input type="text" id="url" [(ngModel)]="url">
+        </div>
+    
+        <div class="rc-section-container">
+            <label for="fechaPublicacion" class="rc-section-gap">Fecha de la publicación</label>
+            <input type="text" id="fechaPublicacion" [(ngModel)]="fechaPublicacion">
+        </div>
+    
+        <div class="rc-section-container">
+            <label for="textoNoticia" class="rc-section-gap">Texto de la noticia</label>
+            <input type="text" id="textoNoticia" [(ngModel)]="textoNoticia">
+        </div>
+      
+        <button (click)="guardar()" class="rc-button">Enviar noticia</button>
       </div>
-  </section> 
+    </section>
+      
+    <section class="rc-section-featured rc-layout-flex">
+        <h2>Últimas noticias añadidas</h2>
+        <div class="rc-section-featured__gallery rc-layout-grid">
+            <article *ngFor="let noticia of arrNoticias" class="rc-section-featured__article rc-layout-flex">
+                <h2>{{noticia.title}}</h2>
+                <p>{{noticia.fechaPublicacion}}</p>
+                <img [src]="noticia.url" [alt]="noticia.title" class="rc-section-featured--preview">
+                <p>{{noticia.textoNoticia}}</p>
+            </article>
+        </div>
+      </section>
+      
+    
+</main>
+</body>
+</html>
+
+
